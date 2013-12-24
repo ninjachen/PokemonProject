@@ -1,7 +1,8 @@
 package org.pokemon.test;
 
 import android.test.ActivityInstrumentationTestCase2;
-import org.pokemon.*;
+
+import org.pokemon.activity.HelloAndroidActivity;
 
 public class HelloAndroidActivityTest extends ActivityInstrumentationTestCase2<HelloAndroidActivity> {
 
