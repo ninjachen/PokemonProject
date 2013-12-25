@@ -15,7 +15,7 @@ import org.pokemon.R;
 public class HelloAndroidActivity extends Activity {
 
     private  ToggleButton hp;
-    private  ToggleButton att;
+    private  ToggleButton atk;
     private  ToggleButton def;
     private  ToggleButton spAtk;
     private  ToggleButton spDef;
@@ -34,7 +34,7 @@ public class HelloAndroidActivity extends Activity {
         TextView all = (TextView)findViewById(R.id.all);
         TextView now = (TextView)findViewById(R.id.now);
         hp = (ToggleButton)findViewById(R.id.hp);
-        att = (ToggleButton)findViewById(R.id.att);
+        atk = (ToggleButton)findViewById(R.id.atk);
         def = (ToggleButton)findViewById(R.id.def);
         spAtk = (ToggleButton)findViewById(R.id.spAtk);
         spDef = (ToggleButton)findViewById(R.id.spDef);

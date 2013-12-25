@@ -4,75 +4,75 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <!--<TextView-->
-        <!--android:id="@+id/hello_world_tv"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/hello_world" />-->
+    <!--android:id="@+id/hello_world_tv"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/hello_world" />-->
 
 
-    <Button
+    <ToggleButton
         style="?android:attr/buttonStyleSmall"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:text="HP"
-        android:id="@+id/button"
+        android:textOff="HP"
+        android:id="@+id/hp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true" />
 
-    <Button
+    <ToggleButton
         style="?android:attr/buttonStyleSmall"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:text="Attack"
-        android:id="@+id/button2"
+        android:textOff="Attack"
+        android:id="@+id/atk"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
+    <ToggleButton
         style="?android:attr/buttonStyleSmall"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:text="Defence"
-        android:id="@+id/button3"
+        android:textOff="Defence"
+        android:id="@+id/def"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true" />
 
-    <Button
+    <ToggleButton
         style="?android:attr/buttonStyleSmall"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:text="SpAtk"
-        android:id="@+id/button4"
+        android:textOff="SpAtk"
+        android:id="@+id/spAtk"
         android:layout_below="@+id/button"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="42dp" />
 
-    <Button
+    <ToggleButton
         style="?android:attr/buttonStyleSmall"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:text="SpDef"
-        android:id="@+id/button5"
-        android:layout_alignTop="@+id/button4"
-        android:layout_alignLeft="@+id/button2" />
+        android:textOff="SpDef"
+        android:id="@+id/spDef"
+        android:layout_alignTop="@+id/spAtk"
+        android:layout_alignLeft="@+id/atk" />
 
-    <Button
+    <ToggleButton
         style="?android:attr/buttonStyleSmall"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:text="Speed"
-        android:id="@+id/button6"
-        android:layout_alignTop="@+id/button5"
+        android:textOff="Speed"
+        android:id="@+id/speed"
+        android:layout_alignTop="@+id/spDef"
         android:layout_alignParentRight="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="下一个精灵"
-        android:id="@+id/button7"
+        android:id="@+id/next"
         android:layout_below="@+id/button4"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="79dp" />
@@ -83,8 +83,8 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="总计：0个"
         android:id="@+id/all"
-        android:layout_alignBottom="@+id/button7"
-        android:layout_alignRight="@+id/button6" />
+        android:layout_alignBottom="@+id/next"
+        android:layout_alignRight="@+id/speed" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="本轮：0个"
         android:id="@+id/now"
-        android:layout_alignTop="@+id/button7"
-        android:layout_alignRight="@+id/button6" />
+        android:layout_alignTop="@+id/next"
+        android:layout_alignRight="@+id/speed" />
 
 </RelativeLayout>
