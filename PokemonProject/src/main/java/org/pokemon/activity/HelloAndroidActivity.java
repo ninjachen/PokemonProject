@@ -2,17 +2,19 @@ package org.pokemon.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ToggleButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.gson.Gson;
 
 import org.pokemon.R;
+import org.pokemon.entity.Pokemon;
 
 public class HelloAndroidActivity extends Activity {
+    private Pokemon pm;
 
     private  ToggleButton hp;
     private  ToggleButton atk;
@@ -20,7 +22,9 @@ public class HelloAndroidActivity extends Activity {
     private  ToggleButton spAtk;
     private  ToggleButton spDef;
     private  ToggleButton speed;
-    private  ToggleButton toggleButton;
+    private  ToggleButton nextPM;
+
+    private final int V = 31;
     /**
      * Called when the activity is first created.
      * @param savedInstanceState If the activity is being re-initialized after 
@@ -31,6 +35,9 @@ public class HelloAndroidActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        pm = new Pokemon();
+
         TextView all = (TextView)findViewById(R.id.all);
         TextView now = (TextView)findViewById(R.id.now);
         hp = (ToggleButton)findViewById(R.id.hp);
@@ -39,13 +46,28 @@ public class HelloAndroidActivity extends Activity {
         spAtk = (ToggleButton)findViewById(R.id.spAtk);
         spDef = (ToggleButton)findViewById(R.id.spDef);
         speed = (ToggleButton)findViewById(R.id.speed);
-//        toggleButton = (ToggleButton)findViewById(R.id.toggleButton);
-        toggleButton.isChecked();
+        nextPM = (ToggleButton)findViewById(R.id.next);
 
-        hp.setOnClickListener(new View.OnClickListener() {
+        Gson gson = new Gson();
+
+        //save Pokemon ability
+        nextPM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast toast=Toast.makeText(getApplicationContext(), "show me the money", Toast.LENGTH_SHORT);
+                if(hp.isChecked())
+                if(atk.isChecked())
+                    pm.setHp(V);
+                      pm.setAtk(V);
+                  if(def.isChecked())
+                    pm.setDef(V);
+                  if(spAtk.isChecked())
+                    pm.setSpAtk(V);
+                  if(spDef.isChecked())
+                    pm.setSpDef(V);
+                  if(speed.isChecked())
+                    pm.setSpeed(V);
+
+                Toast toast = Toast.makeText(getApplicationContext(), new Gson().toJson(pm), Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
             }

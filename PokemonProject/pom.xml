@@ -21,7 +21,14 @@
 			<artifactId>android</artifactId>
 			<scope>provided</scope>
 		</dependency>
-	</dependencies>
+
+        <!-- 3rd jar-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+
+    </dependencies>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>

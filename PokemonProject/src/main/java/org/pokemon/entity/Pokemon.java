@@ -4,14 +4,24 @@ package org.pokemon.entity;
  * Created by ninja_chen on 13-12-24.
  */
 public class Pokemon {
-    private  int pokemonIndex;
-    private  String name;
-    private  int hp;
-    private  int atk;
-    private  int def;
-    private  int spAtk;
-    private  int spDef;
-    private  int speed;
+    private int id;
+    private int pokemonIndex;
+    private String name;
+    private String gender;
+    private int hp;
+    private int atk;
+    private int def;
+    private int spAtk;
+    private int spDef;
+    private int speed;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getPokemonIndex() {
         return pokemonIndex;
@@ -75,5 +85,13 @@ public class Pokemon {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

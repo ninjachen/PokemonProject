@@ -46,6 +46,7 @@
 				<configuration>
 					<test>
 						<!--<skip>true|false|auto</skip> -->
+						<skip>true</skip>
 						<!--<instrumentationPackage>packageName</instrumentationPackage> -->
 						`
 						<!--<instrumentationRunner>className</instrumentationRunner> -->

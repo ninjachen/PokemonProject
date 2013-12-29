@@ -35,7 +35,14 @@
 				<version>4.11</version>
 				<scope>provided</scope>
 			</dependency>
-		</dependencies>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.2.4</version>
+            </dependency>
+
+        </dependencies>
 	</dependencyManagement>
 
 	<build>
@@ -66,9 +73,9 @@
 						</zipalign>
 						<undeployBeforeDeploy>true</undeployBeforeDeploy>
                         <!--add by Ninja ,skip test-->
-                        <test>
-                            <skip>true</skip>
-                        </test>
+                        <!--<test>-->
+                            <!--<skip>true</skip>-->
+                        <!--</test>-->
 					</configuration>
 				</plugin>
 				<plugin>
