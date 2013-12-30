@@ -5,31 +5,36 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ToggleButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.gson.Gson;
 
 import org.pokemon.R;
 import org.pokemon.entity.Pokemon;
+import org.pokemon.util.SQLiteHelper;
 
-public class HelloAndroidActivity extends Activity {
+public class HatchActivity extends Activity {
     private Pokemon pm;
-
-    private  ToggleButton hp;
-    private  ToggleButton atk;
-    private  ToggleButton def;
-    private  ToggleButton spAtk;
-    private  ToggleButton spDef;
-    private  ToggleButton speed;
-    private  ToggleButton nextPM;
-
     private final int V = 31;
+    private ToggleButton hp;
+    private ToggleButton atk;
+    private ToggleButton def;
+    private ToggleButton spAtk;
+    private ToggleButton spDef;
+    private ToggleButton speed;
+    private Button nextPM;
+
+    private SQLiteHelper sqLiteHelper;
+
     /**
      * Called when the activity is first created.
-     * @param savedInstanceState If the activity is being re-initialized after 
-     * previously being shut down then this Bundle contains the data it most 
-     * recently supplied in onSaveInstanceState(Bundle). <b>Note: Otherwise it is null.</b>
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in onSaveInstanceState(Bundle). <b>Note: Otherwise it is null.</b>
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,38 +43,39 @@ public class HelloAndroidActivity extends Activity {
 
         pm = new Pokemon();
 
-        TextView all = (TextView)findViewById(R.id.all);
-        TextView now = (TextView)findViewById(R.id.now);
-        hp = (ToggleButton)findViewById(R.id.hp);
-        atk = (ToggleButton)findViewById(R.id.atk);
-        def = (ToggleButton)findViewById(R.id.def);
-        spAtk = (ToggleButton)findViewById(R.id.spAtk);
-        spDef = (ToggleButton)findViewById(R.id.spDef);
-        speed = (ToggleButton)findViewById(R.id.speed);
-        nextPM = (ToggleButton)findViewById(R.id.next);
-
+        TextView all = (TextView) findViewById(R.id.all);
+        TextView now = (TextView) findViewById(R.id.now);
+        hp = (ToggleButton) findViewById(R.id.hp);
+        atk = (ToggleButton) findViewById(R.id.atk);
+        def = (ToggleButton) findViewById(R.id.def);
+        spAtk = (ToggleButton) findViewById(R.id.spAtk);
+        spDef = (ToggleButton) findViewById(R.id.spDef);
+        speed = (ToggleButton) findViewById(R.id.speed);
+        nextPM = (Button) findViewById(R.id.next);
+        sqLiteHelper = new SQLiteHelper(getApplicationContext());
         Gson gson = new Gson();
 
         //save Pokemon ability
         nextPM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(hp.isChecked())
-                if(atk.isChecked())
-                    pm.setHp(V);
-                      pm.setAtk(V);
-                  if(def.isChecked())
+                if (hp.isChecked())
+                    if (atk.isChecked())
+                        pm.setHp(V);
+                pm.setAtk(V);
+                if (def.isChecked())
                     pm.setDef(V);
-                  if(spAtk.isChecked())
+                if (spAtk.isChecked())
                     pm.setSpAtk(V);
-                  if(spDef.isChecked())
+                if (spDef.isChecked())
                     pm.setSpDef(V);
-                  if(speed.isChecked())
+                if (speed.isChecked())
                     pm.setSpeed(V);
 
                 Toast toast = Toast.makeText(getApplicationContext(), new Gson().toJson(pm), Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
+                sqLiteHelper.insert(pm);
             }
         });
 //        tv.setText("Ninja comes");
@@ -83,9 +89,9 @@ public class HelloAndroidActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-	// Inflate the menu; this adds items to the action bar if it is present.
-	getMenuInflater().inflate(R.menu.main, menu);
-	return true;
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
 //    private myOnClickListener implements View.OnClickListener(){

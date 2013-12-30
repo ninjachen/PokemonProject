@@ -1,7 +1,8 @@
 /Users/ninja_chen/src/java/android/PokemonProject/PokemonProject/target/generated-sources/r/org/pokemon/R.java
 /Users/ninja_chen/src/java/android/PokemonProject/PokemonProject/src/main/java/org/pokemon/util/MyContentProvider.java
+/Users/ninja_chen/src/java/android/PokemonProject/PokemonProject/src/main/java/org/pokemon/activity/PokemonListAdapter.java
 /Users/ninja_chen/src/java/android/PokemonProject/PokemonProject/target/generated-sources/r/org/pokemon/BuildConfig.java
-/Users/ninja_chen/src/java/android/PokemonProject/PokemonProject/src/main/java/org/pokemon/activity/GContact.java
-/Users/ninja_chen/src/java/android/PokemonProject/PokemonProject/src/main/java/org/pokemon/activity/HelloAndroidActivity.java
+/Users/ninja_chen/src/java/android/PokemonProject/PokemonProject/src/main/java/org/pokemon/activity/HatchHistory.java
 /Users/ninja_chen/src/java/android/PokemonProject/PokemonProject/src/main/java/org/pokemon/entity/Pokemon.java
+/Users/ninja_chen/src/java/android/PokemonProject/PokemonProject/src/main/java/org/pokemon/activity/HatchActivity.java
 /Users/ninja_chen/src/java/android/PokemonProject/PokemonProject/src/main/java/org/pokemon/util/SQLiteHelper.java

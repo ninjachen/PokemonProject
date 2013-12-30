@@ -1,7 +1,7 @@
 org/pokemon/test/R$drawable.class
-org/pokemon/test/HelloAndroidActivityTest.class
 org/pokemon/test/BuildConfig.class
 org/pokemon/test/R$layout.class
 org/pokemon/test/R.class
 org/pokemon/test/R$attr.class
+org/pokemon/test/HatchActivityTest.class
 org/pokemon/test/R$string.class
