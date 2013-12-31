@@ -48,26 +48,31 @@ public class SQLiteHelper extends SQLiteOpenHelper
     public boolean insert(Pokemon pm){
         //默认袋龙
         String sql ="INSERT INTO " + TABLE_NAME +
-                " (pokemonIndex, name, gender, hp, atk, def, spatk, spdef, speed) VALUES (115, Kangaskhan, female, ?, ?, ?, ?, ?, ?)";
+                " (pokemonIndex, name, gender, hp, atk, def, spatk, spdef, speed) VALUES (115, 'Kangaskhan', 'female', ?, ?, ?, ?, ?, ?)";
         Object [] params = new Object[] { pm.getHp(), pm.getAtk(), pm.getDef(), pm.getSpAtk(), pm.getSpDef(), pm.getSpeed()};
         getWritableDatabase().execSQL(sql, params);
         return true;
     }
 
+    public SQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
+
     public ArrayList<Pokemon> queryAll() {
         ArrayList<Pokemon> pmList = new ArrayList<Pokemon>();
         Cursor c1 = null;
-        String sql = "selcet * from " + SQLiteHelper.TABLE_NAME;
+        String sql = "select * from " + SQLiteHelper.TABLE_NAME+";";
         try {
             c1 = getWritableDatabase().rawQuery(sql, null);
             while(c1.moveToNext()){
+
                 Pokemon pm = new Pokemon();
-                pm.setHp(c1.getColumnIndex("hp"));
-                pm.setAtk(c1.getColumnIndex("atk"));
-                pm.setDef(c1.getColumnIndex("def"));
-                pm.setSpAtk(c1.getColumnIndex("spatk"));
-                pm.setSpDef(c1.getColumnIndex("spdef"));
-                pm.setSpeed(c1.getColumnIndex("speed"));
+                pm.setHp(c1.getInt(c1.getColumnIndex("hp")));
+                pm.setAtk(c1.getInt(c1.getColumnIndex("atk")));
+                pm.setDef(c1.getInt(c1.getColumnIndex("def")));
+                pm.setSpAtk(c1.getInt(c1.getColumnIndex("spatk")));
+                pm.setSpDef(c1.getInt(c1.getColumnIndex("spdef")));
+                pm.setSpeed(c1.getInt(c1.getColumnIndex("speed")));
                 pmList.add(pm);
             }
 

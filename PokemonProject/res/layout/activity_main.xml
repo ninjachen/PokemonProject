@@ -18,6 +18,7 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:textOff="HP"
+        android:textOn="V"
         android:id="@+id/hp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true" />
@@ -27,6 +28,7 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:textOff="Attack"
+        android:textOn="V"
         android:id="@+id/atk"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -36,6 +38,7 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:textOff="Defence"
+        android:textOn="V"
         android:id="@+id/def"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true" />
@@ -45,6 +48,7 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:textOff="SpAtk"
+        android:textOn="V"
         android:id="@+id/spAtk"
         android:layout_below="@+id/button"
         android:layout_alignParentLeft="true"
@@ -55,6 +59,7 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:textOff="SpDef"
+        android:textOn="V"
         android:id="@+id/spDef"
         android:layout_alignTop="@+id/spAtk"
         android:layout_alignLeft="@+id/atk" />
@@ -63,6 +68,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
+        android:textOn="V"
         android:textOff="Speed"
         android:id="@+id/speed"
         android:layout_alignTop="@+id/spDef"
@@ -73,9 +79,17 @@
         android:layout_height="wrap_content"
         android:text="下一个精灵"
         android:id="@+id/next"
-        android:layout_below="@+id/button4"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="79dp" />
+        android:layout_below="@+id/spAtk"
+        android:layout_alignParentLeft="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="回忆"
+        android:id="@+id/recall"
+        android:layout_below="@+id/spDef"
+        android:layout_alignLeft="@+id/spDef" />
+
 
     <TextView
         android:layout_width="wrap_content"

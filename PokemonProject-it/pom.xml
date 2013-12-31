@@ -63,7 +63,7 @@
 						<!--</packages> -->
 					</test>
 					<sdk>
-						<platform>16</platform>
+						<platform>${android.api.level}</platform>
 					</sdk>
 									</configuration>
 				<extensions>true</extensions>

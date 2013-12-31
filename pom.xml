@@ -10,9 +10,10 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<platform.version> 4.1.1.4
-					</platform.version>
+		<platform.version> 4.1.1.4</platform.version>
 		<android.plugin.version>3.8.0</android.plugin.version>
+		<android.api.level>19</android.api.level>
+        <android.sdk.path>/home/rabbie/tool/android-studio/sdk</android.sdk.path>
 	</properties>
 
 	<dependencyManagement>
@@ -66,7 +67,8 @@
 					<version>${android.plugin.version}</version>
 					<configuration>
 						<sdk>
-							<platform>16</platform>
+							<!--platform>16</platform-->
+						<platform>${android.api.level}</platform>
 						</sdk>
 												<zipalign>
 							<verbose>true</verbose>

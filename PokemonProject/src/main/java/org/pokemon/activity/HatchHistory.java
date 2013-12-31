@@ -23,14 +23,14 @@ import org.pokemon.util.SQLiteHelper;
 import java.util.ArrayList;
 
 public class HatchHistory extends ListActivity{
-	private ListView listview;
-    private SQLiteHelper sqLiteHelper;
+//	private ListView listview;
+    private SQLiteHelper sqLiteHelper ;
 	Cursor c;
 	@Override  
     public void onCreate(Bundle savedInstanceState) {  
         super.onCreate(savedInstanceState);  
         setContentView(R.layout.contact_list);
-
+        sqLiteHelper = new SQLiteHelper(getApplicationContext());
         setAdapt();
 	}
 
@@ -43,9 +43,9 @@ public class HatchHistory extends ListActivity{
 
     private void setAdapt(){
         //活得查询的cursor
-        listview = (ListView)findViewById(R.id.pmlist);
+//        listview = (ListView)findViewById(R.id.pmlist);
         ArrayList<Pokemon> pokemonList = sqLiteHelper.queryAll();
         PokemonListAdapter pokemonListAdapter = new PokemonListAdapter(getApplicationContext(), pokemonList);
-        listview.setAdapter(pokemonListAdapter);
+        this.setListAdapter(pokemonListAdapter);
     }
 }

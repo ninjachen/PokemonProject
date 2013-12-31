@@ -1,6 +1,7 @@
 package org.pokemon.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -9,7 +10,6 @@ import android.widget.Button;
 import android.widget.ToggleButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 
 import org.pokemon.R;
@@ -26,6 +26,7 @@ public class HatchActivity extends Activity {
     private ToggleButton spDef;
     private ToggleButton speed;
     private Button nextPM;
+    private Button recall;
 
     private SQLiteHelper sqLiteHelper;
 
@@ -52,6 +53,7 @@ public class HatchActivity extends Activity {
         spDef = (ToggleButton) findViewById(R.id.spDef);
         speed = (ToggleButton) findViewById(R.id.speed);
         nextPM = (Button) findViewById(R.id.next);
+        recall = (Button) findViewById(R.id.recall);
         sqLiteHelper = new SQLiteHelper(getApplicationContext());
         Gson gson = new Gson();
 
@@ -76,6 +78,15 @@ public class HatchActivity extends Activity {
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
                 sqLiteHelper.insert(pm);
+            }
+        });
+
+        recall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HatchActivity.this, HatchHistory.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         });
 //        tv.setText("Ninja comes");

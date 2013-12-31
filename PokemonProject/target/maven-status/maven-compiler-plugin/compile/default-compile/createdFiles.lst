@@ -13,5 +13,6 @@ org/pokemon/activity/HatchActivity$1.class
 org/pokemon/R$string.class
 org/pokemon/BuildConfig.class
 org/pokemon/util/MyContentProvider.class
+org/pokemon/activity/HatchActivity$2.class
 org/pokemon/R$menu.class
 org/pokemon/R$attr.class
