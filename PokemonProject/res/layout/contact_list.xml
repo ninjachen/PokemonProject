@@ -11,6 +11,16 @@
         android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="ID"/>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME"/>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="HP"/>
     <TextView
         android:layout_marginLeft="10dp"
@@ -38,7 +48,7 @@
         android:layout_height="wrap_content"
         android:text="SPEED"/>
     </LinearLayout>
-<ListView android:id="@id/android:list"
+<ListView android:id="@+id/hatchlist"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"/>
 </LinearLayout>

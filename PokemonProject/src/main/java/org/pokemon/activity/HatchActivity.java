@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ToggleButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.gson.Gson;
 
 import org.pokemon.R;
@@ -17,6 +18,8 @@ import org.pokemon.entity.Pokemon;
 import org.pokemon.util.SQLiteHelper;
 
 public class HatchActivity extends Activity {
+    private int totalNumber;
+    private int currentNumber;
     private Pokemon pm;
     private final int V = 31;
     private ToggleButton hp;
@@ -27,6 +30,8 @@ public class HatchActivity extends Activity {
     private ToggleButton speed;
     private Button nextPM;
     private Button recall;
+    private TextView total;
+    private TextView current;
 
     private SQLiteHelper sqLiteHelper;
 
@@ -44,8 +49,8 @@ public class HatchActivity extends Activity {
 
         pm = new Pokemon();
 
-        TextView all = (TextView) findViewById(R.id.all);
-        TextView now = (TextView) findViewById(R.id.now);
+        total = (TextView) findViewById(R.id.total);
+        current = (TextView) findViewById(R.id.current);
         hp = (ToggleButton) findViewById(R.id.hp);
         atk = (ToggleButton) findViewById(R.id.atk);
         def = (ToggleButton) findViewById(R.id.def);
@@ -62,22 +67,36 @@ public class HatchActivity extends Activity {
             @Override
             public void onClick(View view) {
                 if (hp.isChecked())
-                    if (atk.isChecked())
-                        pm.setHp(V);
-                pm.setAtk(V);
+                    pm.setHp(V);
+                else
+                    pm.setHp(0);
+                if (atk.isChecked())
+                    pm.setAtk(V);
+                else
+                    pm.setAtk(0);
                 if (def.isChecked())
                     pm.setDef(V);
+                else
+                    pm.setDef(0);
                 if (spAtk.isChecked())
                     pm.setSpAtk(V);
+                else
+                    pm.setSpAtk(0);
                 if (spDef.isChecked())
                     pm.setSpDef(V);
+                else
+                    pm.setSpDef(0);
                 if (speed.isChecked())
                     pm.setSpeed(V);
-
+                else
+                    pm.setSpeed(0);
                 Toast toast = Toast.makeText(getApplicationContext(), new Gson().toJson(pm), Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
                 sqLiteHelper.insert(pm);
+
+                setTotalNumber(++totalNumber);
+                setCurrentNumber(++currentNumber);
             }
         });
 
@@ -86,6 +105,8 @@ public class HatchActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(HatchActivity.this, HatchHistory.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                currentNumber=0;
+                setCurrentNumber(0);
                 startActivity(intent);
             }
         });
@@ -105,13 +126,14 @@ public class HatchActivity extends Activity {
         return true;
     }
 
-//    private myOnClickListener implements View.OnClickListener(){
-//        @Override
-//        public void onClick(View view) {
-//            Toast toast=Toast.makeText(getApplicationContext(), "show me the money", Toast.LENGTH_SHORT);
-//            toast.setGravity(Gravity.CENTER, 0, 0);
-//            toast.show();
-//        }
-//    }
+
+    private void setTotalNumber(int totalNumber) {
+        total.setText("总计：" + totalNumber + "个");
+    }
+
+    private void setCurrentNumber(int currentNumber) {
+        current.setText("本轮：" + currentNumber + "个");
+    }
+
 }
 

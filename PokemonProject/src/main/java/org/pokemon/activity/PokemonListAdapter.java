@@ -6,8 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import org.pokemon.R;
 import org.pokemon.entity.Pokemon;
+
 import java.util.ArrayList;
 
 /**
@@ -15,13 +17,14 @@ import java.util.ArrayList;
  */
 public class PokemonListAdapter extends BaseAdapter {
 
-    private ArrayList<Pokemon> pokemonList ;
+    ArrayList<Pokemon> pokemonList;
     Context context;
 
-    public PokemonListAdapter(Context ctx, ArrayList<Pokemon> pmList){
+    public PokemonListAdapter(Context ctx, ArrayList<Pokemon> pmList) {
         this.context = ctx;
         this.pokemonList = pmList;
     }
+
     @Override
     public int getCount() {
         return pokemonList.size();
@@ -47,20 +50,24 @@ public class PokemonListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.pokemon_list_row, null);
 
         }
+        TextView tvid = (TextView) convertView.findViewById(R.id.tvid);
+        tvid.setText(String.valueOf(pm.getId()));
+        TextView tvname = (TextView) convertView.findViewById(R.id.tvname);
+        tvname.setText(String.valueOf(pm.getName()));
         TextView tvhp = (TextView) convertView.findViewById(R.id.tvhp);
-        tvhp.setText(pm.getHp());
+        tvhp.setText(String.valueOf(pm.getHp()));
         TextView tvAtk = (TextView) convertView.findViewById(R.id.tvatk);
-        tvAtk.setText(pm.getAtk());
+        tvAtk.setText(String.valueOf(pm.getAtk()));
         TextView tvDef = (TextView) convertView.findViewById(R.id.tvdef);
-        tvDef.setText(pm.getDef());
+        tvDef.setText(String.valueOf(pm.getDef()));
         TextView tvspatk = (TextView) convertView.findViewById(R.id.tvspatk);
-        tvAtk.setText(pm.getSpAtk());
+        tvspatk.setText(String.valueOf(pm.getSpAtk()));
         TextView tvspdef = (TextView) convertView.findViewById(R.id.tvspdef);
-        tvDef.setText(pm.getSpDef());
+        tvspdef.setText(String.valueOf(pm.getSpDef()));
         TextView tvspeed = (TextView) convertView.findViewById(R.id.tvspeed);
-        tvDef.setText(pm.getSpeed());
+        tvspeed.setText(String.valueOf(pm.getSpeed()));
 
-
+//        convertView.setTag();
         return convertView;
     }
 }

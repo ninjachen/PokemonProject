@@ -6,39 +6,51 @@
     android:orientation="horizontal" >
 
     <TextView
-        android:id="@+id/tvhp"
-        android:layout_marginLeft="10dp"
+        android:id="@+id/tvid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HP"/>
+        android:text="ID"
+        android:layout_weight="1"/>
+    <TextView
+            android:id="@+id/tvname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NAME"
+            android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/tvhp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HP"
+        android:layout_weight="1"/>
     <TextView
         android:id="@+id/tvatk"
-        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="ATK"/>
     <TextView
         android:id="@+id/tvdef"
-        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="DEF"/>
     <TextView
         android:id="@+id/tvspatk"
-        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="SPATK"/>
     <TextView
         android:id="@+id/tvspdef"
-        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="SPDEF"/>
     <TextView
         android:id="@+id/tvspeed"
-        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="SPEED"/>
 </LinearLayout>

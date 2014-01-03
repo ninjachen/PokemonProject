@@ -1,6 +1,7 @@
 package org.pokemon.activity;
 
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
@@ -16,23 +17,26 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+
 import org.pokemon.R;
 import org.pokemon.entity.Pokemon;
 import org.pokemon.util.SQLiteHelper;
 
 import java.util.ArrayList;
 
-public class HatchHistory extends ListActivity{
-//	private ListView listview;
-    private SQLiteHelper sqLiteHelper ;
-	Cursor c;
-	@Override  
-    public void onCreate(Bundle savedInstanceState) {  
-        super.onCreate(savedInstanceState);  
+public class HatchHistory extends Activity {
+    private ListView listview;
+    private SQLiteHelper sqLiteHelper;
+    Cursor c;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_list);
         sqLiteHelper = new SQLiteHelper(getApplicationContext());
+        listview = (ListView) findViewById(R.id.hatchlist);
         setAdapt();
-	}
+    }
 
     @Override
     protected void onResume() {
@@ -41,11 +45,11 @@ public class HatchHistory extends ListActivity{
         setAdapt();
     }
 
-    private void setAdapt(){
+    private void setAdapt() {
         //活得查询的cursor
 //        listview = (ListView)findViewById(R.id.pmlist);
         ArrayList<Pokemon> pokemonList = sqLiteHelper.queryAll();
         PokemonListAdapter pokemonListAdapter = new PokemonListAdapter(getApplicationContext(), pokemonList);
-        this.setListAdapter(pokemonListAdapter);
+        listview.setAdapter(pokemonListAdapter);
     }
 }

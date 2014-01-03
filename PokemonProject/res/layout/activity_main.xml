@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="总计：0个"
-        android:id="@+id/all"
+        android:id="@+id/total"
         android:layout_alignBottom="@+id/next"
         android:layout_alignRight="@+id/speed" />
 
@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="本轮：0个"
-        android:id="@+id/now"
+        android:id="@+id/current"
         android:layout_alignTop="@+id/next"
         android:layout_alignRight="@+id/speed" />
 

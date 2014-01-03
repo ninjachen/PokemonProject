@@ -48,9 +48,10 @@ public class SQLiteHelper extends SQLiteOpenHelper
     public boolean insert(Pokemon pm){
         //默认袋龙
         String sql ="INSERT INTO " + TABLE_NAME +
-                " (pokemonIndex, name, gender, hp, atk, def, spatk, spdef, speed) VALUES (115, 'Kangaskhan', 'female', ?, ?, ?, ?, ?, ?)";
+                " (pokemonIndex, name, gender, hp, atk, def, spatk, spdef, speed) VALUES (115, '袋龙', 'female', ?, ?, ?, ?, ?, ?)";
         Object [] params = new Object[] { pm.getHp(), pm.getAtk(), pm.getDef(), pm.getSpAtk(), pm.getSpDef(), pm.getSpeed()};
         getWritableDatabase().execSQL(sql, params);
+        getWritableDatabase().close();
         return true;
     }
 
@@ -67,6 +68,10 @@ public class SQLiteHelper extends SQLiteOpenHelper
             while(c1.moveToNext()){
 
                 Pokemon pm = new Pokemon();
+                pm.setId(c1.getInt(c1.getColumnIndex("id")));
+                pm.setGender(c1.getString(c1.getColumnIndex("gender")));
+                pm.setName(c1.getString(c1.getColumnIndex("name")));
+                pm.setPokemonIndex(c1.getInt(c1.getColumnIndex("pokemonIndex")));
                 pm.setHp(c1.getInt(c1.getColumnIndex("hp")));
                 pm.setAtk(c1.getInt(c1.getColumnIndex("atk")));
                 pm.setDef(c1.getInt(c1.getColumnIndex("def")));
@@ -75,7 +80,7 @@ public class SQLiteHelper extends SQLiteOpenHelper
                 pm.setSpeed(c1.getInt(c1.getColumnIndex("speed")));
                 pmList.add(pm);
             }
-
+            c1.close();
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("DATABASE ERROR " + e);
