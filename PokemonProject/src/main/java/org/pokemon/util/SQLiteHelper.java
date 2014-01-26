@@ -46,10 +46,10 @@ public class SQLiteHelper extends SQLiteOpenHelper
 
 
     public boolean insert(Pokemon pm){
-        //默认袋龙
+        //默认袋龙，neutral没有性别
         String sql ="INSERT INTO " + TABLE_NAME +
-                " (pokemonIndex, name, gender, hp, atk, def, spatk, spdef, speed) VALUES (132, '百变怪', 'neutral', ?, ?, ?, ?, ?, ?)";
-        Object [] params = new Object[] { pm.getHp(), pm.getAtk(), pm.getDef(), pm.getSpAtk(), pm.getSpDef(), pm.getSpeed()};
+                " (pokemonIndex, name, gender, hp, atk, def, spatk, spdef, speed) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        Object [] params = new Object[] { pm.getPokemonIndex(), pm.getName(), pm.getGender(), pm.getHp(), pm.getAtk(), pm.getDef(), pm.getSpAtk(), pm.getSpDef(), pm.getSpeed()};
         getWritableDatabase().execSQL(sql, params);
         getWritableDatabase().close();
         return true;

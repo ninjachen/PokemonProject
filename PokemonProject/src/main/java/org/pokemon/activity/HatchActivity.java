@@ -47,7 +47,8 @@ public class HatchActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        pm = new Pokemon();
+        if(pm == null)
+             pm = new Pokemon();
 
         total = (TextView) findViewById(R.id.total);
         current = (TextView) findViewById(R.id.current);
@@ -134,6 +135,25 @@ public class HatchActivity extends Activity {
     private void setCurrentNumber(int currentNumber) {
         current.setText("本轮：" + currentNumber + "个");
     }
+
+
+    public void setPokemon(Pokemon pokemon){
+
+        this.pm = pokemon;
+    }
+
+
+    /**
+     * 袋龙 115 female
+     * 百变怪 132 netral
+     * gastly 92 all
+     */
+    public void setPokemonGastly(){
+        Pokemon pm = new Pokemon();
+        pm.setPokemonIndex(92);
+        setPokemon(pm);
+    }
+
 
 }
 
