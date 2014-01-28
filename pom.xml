@@ -16,6 +16,7 @@
         <!--android.sdk.path>/home/rabbie/tool/android-studio/sdk</android.sdk.path-->
 	</properties>
 
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -37,11 +38,19 @@
 				<scope>provided</scope>
 			</dependency>
 
+            <!-- customers-->
             <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
                 <version>2.2.4</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>support-v4</artifactId>
+                <version>r7</version>
+            </dependency>
+
 
         </dependencies>
 	</dependencyManagement>
