@@ -91,6 +91,8 @@ public class HatchActivity extends Activity {
                     pm.setSpeed(V);
                 else
                     pm.setSpeed(0);
+
+                setPokemonGastly(pm);
                 Toast toast = Toast.makeText(getApplicationContext(), new Gson().toJson(pm), Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
@@ -148,10 +150,10 @@ public class HatchActivity extends Activity {
      * 百变怪 132 netral
      * gastly 92 all
      */
-    public void setPokemonGastly(){
-        Pokemon pm = new Pokemon();
+    public void setPokemonGastly(Pokemon pm){
         pm.setPokemonIndex(92);
-        setPokemon(pm);
+        pm.setGender("netral");
+        pm.setName("gastly");
     }
 
 
