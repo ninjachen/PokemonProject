@@ -24,11 +24,7 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="549ce9a2-3bcc-40ed-bd9c-6479b24077ec" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PokemonProject/src/main/java/org/pokemon/activity/HatchActivity.java" afterPath="$PROJECT_DIR$/PokemonProject/src/main/java/org/pokemon/activity/HatchActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PokemonProject-it/PokemonProject-it.iml" afterPath="$PROJECT_DIR$/PokemonProject-it/PokemonProject-it.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="549ce9a2-3bcc-40ed-bd9c-6479b24077ec" name="Default" comment="" />
     <ignored path="PokemonProject-parent.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
