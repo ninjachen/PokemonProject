@@ -46,6 +46,8 @@ public class HatchHistory extends Activity {
     }
 
     private void setAdapt() {
+        java.util.ArrayList l = new ArrayList<String>();
+        l.add("");
         //活得查询的cursor
 //        listview = (ListView)findViewById(R.id.pmlist);
         ArrayList<Pokemon> pokemonList = sqLiteHelper.queryAll();

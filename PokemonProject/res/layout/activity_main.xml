@@ -77,7 +77,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="下一个精灵"
+        android:text="保存"
         android:id="@+id/next"
         android:layout_below="@+id/spAtk"
         android:layout_alignParentLeft="true"/>

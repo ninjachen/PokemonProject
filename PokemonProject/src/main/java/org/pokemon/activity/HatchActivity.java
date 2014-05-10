@@ -1,6 +1,5 @@
 package org.pokemon.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -10,7 +9,7 @@ import android.widget.Button;
 import android.widget.ToggleButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.ActionBar;
+import android.app.Activity;
 import com.google.gson.Gson;
 
 import org.pokemon.R;
@@ -62,7 +61,8 @@ public class HatchActivity extends Activity {
         recall = (Button) findViewById(R.id.recall);
         sqLiteHelper = new SQLiteHelper(getApplicationContext());
         Gson gson = new Gson();
-
+        totalNumber = sqLiteHelper.getCount();
+        setTotalNumber(totalNumber);
         //save Pokemon ability
         nextPM.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,13 +113,7 @@ public class HatchActivity extends Activity {
                 startActivity(intent);
             }
         });
-//        tv.setText("Ninja comes");
-//        tv.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ((TextView)view).setText("clicks");
-//            }
-//        });
+
     }
 
     @Override

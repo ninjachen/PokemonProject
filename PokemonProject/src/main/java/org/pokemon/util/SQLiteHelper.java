@@ -64,7 +64,8 @@ public class SQLiteHelper extends SQLiteOpenHelper
         Cursor c1 = null;
         String sql = "select * from " + SQLiteHelper.TABLE_NAME+";";
         try {
-            c1 = getWritableDatabase().rawQuery(sql, null);
+//            c1 = getWritableDatabase().rawQuery(sql, null);
+              c1 = getWritableDatabase().query(true, TABLE_NAME, null, null, null, null , null, "id desc", "0, 20" );
             while(c1.moveToNext()){
 
                 Pokemon pm = new Pokemon();
@@ -89,4 +90,25 @@ public class SQLiteHelper extends SQLiteOpenHelper
         return pmList;
 
     }
+
+    public int getCount(){
+        ArrayList<Pokemon> pmList = new ArrayList<Pokemon>();
+        Cursor c1 = null;
+        String sql = "select * from " + SQLiteHelper.TABLE_NAME+";";
+        int count = 0 ;
+        try {
+            c1 = getWritableDatabase().query(true, TABLE_NAME, new String[]{"id"}, null, null, null, null, null, null);
+            while (c1.moveToNext()){
+                count++;
+            }
+
+            return count;
+        }catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("DATABASE ERROR " + e);
+            return -1;
+
+        }
+    }
+
 }
